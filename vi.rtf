@@ -1,0 +1,403 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf360
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;\f2\froman\fcharset0 Times-Roman;
+\f3\fnil\fcharset0 LucidaGrande;\f4\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww24480\viewh23820\viewkind0
+\deftab720
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardeftab720\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 :------------------------------------------------------------------------------\
+*Q_ur*          Undo/Redo commands\
+\
+|u| 				      		N  u						undo last N changes\
+|CTRL-R|					N  CTRL-R				redo last N undone changes\
+|U|						U						restore last changed line\
+|CTRL-D| 											Page Down\
+|CTRL-U|											Page  Up	\
+------------------------------------------------------------------------------\
+*Q_ed*          Editing a file\
+\
+Without !: Fail if changes has been made to the current buffer.\
+With !: Discard any changes to the current buffer.\
+\
+|:edit_f|					:e[dit][!] \{file\}				Edit \{file\}.\
+|:edit|					:e[dit][!]					Reload the current file.\
+|:enew|					:ene[w][!]					Edit a new, unnamed buffer.\
+|:find|					:fin[d][!] \{file\}				Find \{file\} in 'path' and edit it.\
+|CTRL-^|  					 N   CTRL-^				Edit alternate file N (equivalent to ":e #N").\
+|gf|						gf  or ]f					Edit the file whose name is under the cursor\
+|:pwd|					:pwd						Print the current directory name.\
+|:cd|						:cd [path]					Change the current directory to [path].\
+|:cd-|						:cd -						Back to previous current directory.\
+|:file|						:f[ile]						Print the current file name and the cursor position.\
+|:file|						:f[ile] \{name\}				Set the current file name to \{name\}.\
+|:files|					:files						Show alternate file names.\
+------------------------------------------------------------------------------\
+*Q_fl*          Using the argument list                 |argument-list|\
+\
+|:args|					:ar[gs]					Print the argument list, with the current file in "[]".\
+|:all|						:all  or :sall				Open a window for every file in the arg list.\
+|:wn|						:wn[ext][!]					Write file and edit next file.\
+|:wn|						:wn[ext][!] \{file\}				Write to \{file\} and edit next file, unless \{file\} exists.  With !, overwrite existing file.\
+|:wN|						:wN[ext][!] [file] 			  	Write file and edit previous file.\
+\
+             		in current window	in new window\
+|:argument|	:argu[ment] N		:sar[gument] N		Edit file N\
+|:next|		:n[ext]			:sn[ext]			Edit next file\
+|:next_f|    		:n[ext] \{arglist\}		:sn[ext] \{arglist\}		define new arg list and edit first file\
+|:Next|		:N[ext]			:sN[ext]			Edit previous file\
+|:first|			:fir[st]				:sfir[st]			Edit first file\
+|:last|			:la[st]				:sla[st]			Edit last file\
+------------------------------------------------------------------------------\
+*Q_wq*          Writing and quitting\
+\
+|:w|						:[range]w[rite][!]				Write to the current file.\
+|:w_f|						:[range]w[rite] \{file\}			Write to \{file\}, unless it already exists.\
+|:w_f|						:[range]w[rite]! \{file\}			Write to \{file\}.  Overwrite an existing file.\
+|:w_a|					:[range]w[rite][!] >>			Append to the current file.\
+|:w_a|					:[range]w[rite][!] >> \{file\}		Append to \{file\}.\
+|:w_c|					:[range]w[rite] !\{cmd\}			Execute \{cmd\} with [range] lines as standard input.\
+|:up|						:[range]up[date][!]			write to current file if modified\
+|:wall|					:wa[ll][!]					write all changed buffers\
+|:q|						:q[uit]					Quit current buffer, unless changes have been made.  Exit Vim when there are no other non-help buffers\
+|:q|						:q[uit]!					Quit current buffer always, discard any changes.  Exit Vim when there are no other non-help buffers\
+|:qa|						:qa[ll]					Exit Vim, unless changes have been made.\
+|:qa|						:qa[ll]!					Exit Vim always, discard any changes.\
+|:cq|  					   	:cq						Quit without writing and return error code.\
+|:wq|						:wq[!]						Write the current file and exit.\
+|:wq|						:wq[!] \{file\}					Write to \{file\} and exit.\
+|:xit|						:x[it][!] [file]					Like ":wq" but write only when changes have been made\
+|ZZ|						ZZ						Same as ":x".\
+|ZQ|						ZQ						Same as ":q!".\
+|:xall|						:xa[ll][!]  or :wqall[!]			Write all changed buffers and exit\
+|:stop|					:st[op][!]					Suspend VIM or start new shell.  If 'aw' option is set and [!] not given write the buffer.\
+|CTRL-Z|	CTRL-Z			Same as ":stop"\
+_____________________________________________________________________________________________________\
+*Q_wi*          Multi-window commands\
+\
+|CTRL-W_s|				CTRL-W s  or  :split			Split window into two parts\
+|:split_f|      				:split \{file\}					Split window and edit \{file\} in one of them\
+|:vsplit|					:vsplit \{file\}				Same, but split vertically\
+|:vertical|					:vertical \{cmd\}				Make \{cmd\} split vertically\
+|:sfind|					:sf[ind] \{file\}				Split window, find \{file\} in 'path' and edit it.\
+|CTRL-W_]|				CTRL-W ]					Split window and jump to tag under cursor\
+|CTRL-W_f|				CTRL-W f					Split window and edit file name under the cursor\
+|CTRL-W_^|				CTRL-W ^					Split window and edit alternate file\
+|CTRL-W_n|      			CTRL-W n  or  :new			Create new empty window\
+|CTRL-W_q|      			CTRL-W q  or  :q[uit]			Quit editing and close window\
+|CTRL-W_c|      				CTRL-W c  or  :cl[ose]		Make buffer hidden and close window\
+|CTRL-W_o|      			CTRL-W o  or  :on[ly]			Make current window only one on the screen\
+|CTRL-W_j|				CTRL-W j					Move cursor to window below\
+|CTRL-W_k|      				CTRL-W k                			Move cursor to window above\
+|CTRL-W_CTRL-W|			CTRL-W CTRL-W			Move cursor to window below (wrap)\
+|CTRL-W_W|				CTRL-W W				Move cursor to window above (wrap)\
+|CTRL-W_t|				CTRL-W t					Move cursor to top window\
+|CTRL-W_b|				CTRL-W b				Move cursor to bottom window\
+|CTRL-W_p|				CTRL-W p				Move cursor to previous active window\
+|CTRL-W_r|				CTRL-W r					Rotate windows downwards\
+|CTRL-W_R|				CTRL-W R				Rotate windows upwards\
+|CTRL-W_x|				CTRL-W x					Exchange current window with next one\
+|CTRL-W_=|				CTRL-W =				Make all windows equal height\
+|CTRL-W_-|				CTRL-W -					Decrease current window height\
+|CTRL-W_+|				CTRL-W +				Increase current window height\
+|CTRL-W__|				CTRL-W _				Set current window height (default: very high)\
+_____________________________________________________________________________\
+
+\b\fs32 Folding 
+\b0\fs24 \
+
+\b zf
+\b0 	create folder\
+
+\b zd
+\b0  	delete folder under cursor\
+
+\b zD
+\b0 	delete folder recursive\
+
+\b zE
+\b0 	delete all folders in file	\
+
+\b zo
+\b0  	open folder under cursor\
+
+\b zO
+\b0  	open folder recursive\
+
+\b zc
+\b0 	close folder under cursor\
+
+\b zC
+\b0  	same as zc recursive\
+
+\b za
+\b0  	open/close (toggle) folder\
+\
+\
+\
+
+\fs22 		
+\b \ul MODES
+\b0 \ulnone \
+
+\b v
+\b0  					visual move\
+
+\b vl
+\b0  					visual line\
+
+\b i
+\b0 					insert mode\
+\
+\ul 		
+\b WINDOW
+\b0  
+\b MOVEMENT
+\b0 \
+
+\b \ulnone CRL-u
+\b0 				move up a page\
+
+\b CRL-d
+\b0 				move down a page\
+
+\b Shift-uparrow
+\b0  			up a page\
+
+\b Shift-downarrow
+\b0 		down a page\
+
+\b e!
+\b0 					reload the current file\
+
+\b 1G
+\b0  
+\b or
+\b0  
+\b gg
+\b0 				beginning of the file \
+
+\b G
+\b0 					goes to the en of file \
+
+\b H
+\b0 					higher part of the screen\
+
+\b M
+\b0 					Middle part of the screen\
+
+\b L	
+\b0 				Lower pard of the screen\
+
+\b CRL-f
+\b0 				forward of the file\
+
+\b CRL-b
+\b0 				backward of the file\
+
+\b fc
+\b0 					Move forward to c\
+
+\b Fc
+\b0 					Move back to c\
+
+\b %
+\b0 					Move to associated (), \{\}, []\
+\
+
+\b \ul 		LINE	 MOVEMENT \{motion\}	\
+\ulnone w
+\b0 					forward a word\
+W					Move to the next blank delimited word\
+
+\b b
+\b0 					back a word\
+
+\b B
+\b0 					Move to the beginning of blank delimited word\
+
+\b e
+\b0 					Move to the end of the word\
+
+\b E
+\b0 					Move to the end  of Blank delimited word\
+
+\b (
+\b0 					Move a sentence back\
+
+\b )
+\b0 					Move a sentence forward\
+
+\b \{
+\b0 					Move a paragraph back\
+
+\b \}
+\b0 					Move a paragraph forward\
+
+\b ^
+\b0 					To the first non-blank char of the line
+\b \
+$
+\b0  					last char of the line \
+
+\b 0
+\b0 					first char  of the line\
+
+\b g0
+\b0 					first char in screen line\
+
+\b -
+\b0 "minus"				To the first char (*) lines higher\
+
+\b +
+\b0 "plus"				To the first char (*) lines lower\
+
+\b gm
+\b0 					middle of k screen lined\
+
+\b O
+\b0 					open a new line above curser\
+
+\b o
+\b0 					"	"	"       below    "\
+>>					indent\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ql\qnatural\pardirnatural
+
+\b \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardeftab720\ql\qnatural\pardirnatural
+
+\b0 \cf0 \
+
+\b 		\ul EDITING\ulnone  \
+x
+\b0 					delete to the right of cursor \
+
+\b X
+\b0 					"	    "   "    left    "     "\
+
+\b d\{motion\}	
+\b0 			delete text that is that is moved over with \{motion\}\
+
+\b dw 
+\b0 delete word					 \
+
+\b d$ 
+\b0 deletes the rest of the\
+word (same as cut & paste)\
+
+\b xp
+\b0 					delete and paste\
+
+\b y\{motion\}	
+\b0 			yank text moved over with \{motion\}\
+
+\b \{visual\}y
+\b0 				yank highlighted text\
+
+\b yy
+\b0 					yank(copy) the whole line including the new line\
+
+\b ytchar	
+\b0 			yank until char
+\i (not including charecter)
+\i0 \
+
+\b yw
+\b0 					yank word\
+
+\b y$
+\b0 					yank until end of line	\
+
+\b yb
+\b0 					yank from cursor to begin of current word\
+
+\b p
+\b0 					paste\
+
+\b cw
+\b0 					change word\
+
+\b r
+\b0 					replace single letter		\
+
+\b :/word or :?word
+\b0 		search word (* next occurrence, # previous occurrence  ) n up, N down\
+
+\b fword
+\b0 				move cursor to first occurrence of word to the right\
+
+\b Fword
+\b0  				"             "             "                "               "         "          left\
+
+\b :s/cat/dog
+\b0 				substitutes cat for dog\
+
+\b u 
+\b0 					undo\
+
+\b a
+\b0 					append a word\
+
+\b A
+\b0 					append a the end of the line \
+
+\b I
+\b0 					Insert at the beginning of the line\
+
+\b :1,5d
+\b0 					delete lines 1-5\
+
+\b :1,5y
+\b0 					copy   lines 1-5\
+
+\b :1,5t 8
+\b0 				copy   lines 1-5 after line 8\
+
+\b :1,5m 8
+\b0 				move  lines 1-5 after line 8\
+\
+see the difference btw two files. \
+open one file and then the other with..\
+:diffsplit  dif1/dif2/filename \
+\pard\pardeftab720\ql\qnatural
+
+\f1\fs24 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\f2 \cf0 difference btw 2 files shown vertically\
+open any file then
+\f3 \uc0\u8232 
+\f2\b vert diffsplit filename\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f1\b0 \cf0 SEARCH AND REPLACE\
+\pard\pardeftab720\ql\qnatural
+
+\f4\b \cf0 :%s/foo/bar/g		
+\f2\b0 Find each occurrence of 'foo', and replace it with 'bar'.
+\b \
+
+\f4 :%s/foo/bar/gc		
+\f2\b0 Change each 'foo' to 'bar', but ask for confirmation first.
+\b \
+
+\f4 :%s/\\<foo\\>/bar/gc	
+\f2\b0 Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation.\
+
+\f4\b :%s/foo/bar/gci		
+\f2\b0 Change each 'foo' (case insensitive) to 'bar'; ask for confirmation.
+\b \
+
+\f4 :%s/foo/bar/gcI		
+\f2\b0 Change each 'foo' (case sensitive) to 'bar'; ask for confirmation.
+\b \
+\pard\pardeftab720\sa240\ql\qnatural
+
+\b0 \cf0 The 
+\f4\b g
+\f2\b0  flag means 
+\i global
+\i0  \'96 each occurrence in the line is changed, rather than just the first.
+\f0\fs22  \
+}
