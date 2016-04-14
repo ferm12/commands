@@ -1,0 +1,31 @@
+alias art = "php artisan" 
+
+run this command before migrating any table
+php artisan migrate:install 
+
+art migrate:make create_posts_table --table=post --create
+
+art generate:migration create_users_table --fields="name:string, age:integer"
+art generate:migration add_user_id_to_post_table --fields"user_id:integer" 
+art generate:resource post --fields="title:string, body:text"
+
+php artisan migrate:instal
+
+art migrate 
+
+art migrate:rollback
+
+art migrate:reset
+
+to add a column
+art migrate:refresh ---------- reset and reruns it again
+
+seed
+art db:seed
+
+art migrate:refresh --seed  
+
+art generate:model Post
+
+php artisan db:seed --class=
+

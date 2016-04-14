@@ -1,111 +1,47 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf360
-{\fonttbl\f0\fmodern\fcharset0 Courier-Bold;\f1\froman\fcharset0 Times-Roman;\f2\fswiss\fcharset0 Helvetica;
-\f3\fmodern\fcharset0 Courier;}
-{\colortbl;\red255\green255\blue255;}
-\margl1440\margr1440\vieww23840\viewh11120\viewkind0
-\deftab720
-\pard\pardeftab720\ql\qnatural
+cp
+==
+cp file1 file2          creates file2 in the current directory that is a copy of file1.
+cp file dir             copies file into directory dir.
+cp -R* dir              copy recursively all into directory dir
+cp -R dir1 dir2	        copy recursively from  dir1 to dir2
 
-\f0\b\fs24 \cf0 cp file1 file2	
-\f1\b0 	creates file2 in the current directory that is a copy of file1.\
+mv
+==
+mv old new              renames old to new
+mv -i old new           to be prompted before overwriting, overwrite (y/n)? 
+mv old new              renames old to new moves file into dir
 
-\f0\b cp file dir
-\f1\b0 		copies file into directory dir.\
+find 
+====
+find all files with .html extension in the current dir
+find *.html
 
-\f0\b cp -R* dir			
-\f2\b0\fs22 copy recursively all into directory dir\
+move all files in the current directory js (*js) to destination /var/www/js
+find *js -exec mv {} /var/www/html/js \;
 
-\f0\b\fs24 cp -R dir1 dir2		
-\f2\b0\fs22 copy recursively from  dir1 to dir2
-\f0\b\fs24 				
-\f2\b0\fs22 \
+find all the file names that end with the .html file extension in the current dir denoted by (.)
+find . -name \*.html -print
 
-\f1\fs24 \
+list all files whose names do not end in c
+find / \! -name "*.c" -print
 
-\f0\b mv old new			
-\f1\b0 renames old to new\
+change directory permissions to 777 recursively  
+find /dir/here -type d -exec chmod 777 {} \;
 
-\f0\b mv -i old new		
-\f1\b0 to be prompted before overwriting, overwrite (y/n)?
-\f3 \uc0\u8232 
-\f0\b mv old new			
-\f1\b0 renames old to new
-\f0\b 		
-\f1\b0 moves file into dir\
-\pard\pardeftab720\ql\qnatural
+change files permissions to 777 recursively 
+find /dir/here -type f -exec chmod 777 {} \;
 
-\f3 \cf0 \
-\pard\pardeftab720\ql\qnatural
 
-\f0\b \cf0 find / -name \\*.html -print old
-\f1\b0 \
-\
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardeftab720\ql\qnatural\pardirnatural
+grep
+====
+find "text" in dir/path recursively 
+grep -R "text" dir/path
 
-\f2\fs22 \cf0 move all files in the current directory js (*js) to destination /var/www/js\
+search for "text" and print file and text line
+grep -r "text" dir/path
 
-\b find *js -exec mv \{\} /var/www/html/js \\;\
+redirect output to file.txt
+grep -r "text" dir/path > file.txt 2>&1
 
-\b0 \
-find / -name \\*.html -print\
-
-\b Regular Expressions
-\b0 \
-.	Matches any single char\
-*	Matches zero or more occurrences of a match of the preceding char\
-^	Forces a match to the  beginning of a line \
-$	A match to the end of a line\
-\\	Quotes special char\
-\\<	Forces a match to the beginning of a word\
-\\>	Forces a match to the end of a word\
-\
-\pard\pardeftab720\ql\qnatural
-\cf0 \
-\pard\pardeftab720\ql\qnatural
-
-\b \cf0 	Terminal \
-CTRL + a
-\b0 	: 	Move the cursor to the beginning of the current line	\
-
-\b CTRL + e
-\b0 	:	"	"	"    "   "    end 	       "   "       "         "\
-
-\b Option + b
-\b0 	:	Move the cursor backward one word \
-
-\b Option + f
-\b0 	:	    "      "       "       forward      "       " \
-
-\b Tab
-\b0 		:	Autocomplete commands and file names\
-
-\b CTRL + u
-\b0 	:	Delete text before cursor\
-
-\b CTRL + k	
-\b0 :	Delete the line from the position of the cursor to the end of the line\
-
-\b CTRL + w
-\b0 	:	Delete the word before the cursor \
-
-\b CTRL + l
-\b0 	:	Clears the Screen, similar to the clear command \
-
-\b CTRL + r
-\b0 	:	Let's you search through previously used commands \
-
-\b CTRL + c
-\b0 	:	Kill whatever you are running  \
-
-\b CTRL + d
-\b0 	:	Exit the current shell /  Delete  at cursor position \
-
-\b CTRL + z
-\b0 	:	Puts whatever you are running into a suspended background process. fg command restores it  \
-
-\b CTRL + t
-\b0 	:	Swap the last two characters before the cursor \
-
-\b ESC + t
-\b0  	:	"	"	"    words	"	"	"	\
-}
+find all files that start with 'a'
+ls | grep '^a'

@@ -1,0 +1,24 @@
+function Baa()
+{
+    this.colors = ["red", "blue", "green"];
+}
+
+function Foo()
+{
+    //Baa is been call in the context of this(Foo)
+    Baa.call(this);
+}
+
+var instance11 = new Foo();
+instance11.colors.push("black");
+alert(instance11.colors)            // "red,blue,green,black"
+
+var instance22 = new Foo();
+alert(instance22.colors);           // "red,blue,green"
+
+inheritance stack
+=================
+    Foo
+     |
+     V
+    Baa
