@@ -3,6 +3,7 @@ function Baa()
     this.colors = ["red", "blue", "green"];
 }
 
+// Foo inherits Baa
 function Foo()
 {
     //Baa is been call in the context of this(Foo)

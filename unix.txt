@@ -31,7 +31,6 @@ find /dir/here -type d -exec chmod 777 {} \;
 change files permissions to 777 recursively 
 find /dir/here -type f -exec chmod 777 {} \;
 
-
 grep
 ====
 find "text" in dir/path recursively 
