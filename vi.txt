@@ -161,6 +161,11 @@ o					"	"	"       below    "
 
 		EDITING
 		=======
+a					append a word
+A					append a the end of the line 
+I					Insert at the beginning of the line
+i					Insert text before the cursor [count] times
+u 					undo
 x                   delete to the right of cursor 
 X					"	    "   "    left    "     "
 d{motion}			delete text that is that is moved over with {motion}
@@ -178,19 +183,20 @@ p					paste
 cw					change word
 r					replace single letter		
 :/word or :?word	search word (* next occurrence, # previous occurrence  ) n up, N down
+<Leader><Leader>f   move forward in the document to specified char
+<Leader><Leader>F   move backward
 fchar               move forward to char
 Fchar               move back
 fword				move forward to first occurrence of the word
-Fword 				move backward "   "         "    "   "   "
+Fword 				move backward 
 :s/cat/dog			substitutes cat for dog
-u 					undo
-a					append a word
-A					append a the end of the line 
-I					Insert at the beginning of the line
-i					Insert text before the cursor [count] times
+:1d                 delete line 1
 :1,5d				delete lines 1-5
+:1y                 copy line 1
 :1,5y				copy lines 1-5
+:1t 8               copy line 1 after 8
 :1,5t 8				copy lines 1-5 after line 8
+:1m 8               move line 1 after 8
 :1,5m 8				move lines 1-5 after line 8
 
 visual mode
@@ -210,7 +216,6 @@ open one file and then the other with..
 
 difference btw 2 files shown vertically
 open any file then vert diffsplit filename
-
 
 
 SEARCH AND REPLACE
