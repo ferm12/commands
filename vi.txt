@@ -121,8 +121,9 @@ i					insert mode
 		===============
 CRL-u				move up a page
 CRL-d				move down a page
-Shift-uparrow 			up a page
+Shift-uparrow 		up a page
 Shift-downarrow		down a page
+CTRL-W j,k,h,l      move cursor to window down,up,right,left
 e!					reload the current file
 1G or gg			beginning of the file 
 G					goes to the en of file 
@@ -131,8 +132,6 @@ M					Middle part of the screen
 L					Lower pard of the screen
 CRL-f				forward of the file
 CRL-b				backward of the file
-fc					Move forward to c
-Fc					Move back to c
 %					Move to associated (), {}, []
 
 		LINE MOVEMENT {motion}
@@ -179,8 +178,10 @@ p					paste
 cw					change word
 r					replace single letter		
 :/word or :?word	search word (* next occurrence, # previous occurrence  ) n up, N down
-fword				move cursor to first occurrence of word to the right
-Fword 				"             "             "                "               "         "          left
+fchar               move forward to char
+Fchar               move back
+fword				move forward to first occurrence of the word
+Fword 				move backward "   "         "    "   "   "
 :s/cat/dog			substitutes cat for dog
 u 					undo
 a					append a word
