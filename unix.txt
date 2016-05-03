@@ -33,11 +33,8 @@ find /dir/here -type f -exec chmod 777 {} \;
 
 grep
 ====
-find "text" in dir/path recursively 
-grep -R "text" dir/path
-
-search for "text" and print file and text line
-grep -r "text" dir/path
+find "text" in dir/path recursively(r) and line-number(n)
+grep -rn "text" dir/path
 
 redirect output to file.txt
 grep -r "text" dir/path > file.txt 2>&1

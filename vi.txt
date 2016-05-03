@@ -123,7 +123,7 @@ CRL-u				move up a page
 CRL-d				move down a page
 Shift-uparrow 		up a page
 Shift-downarrow		down a page
-CTRL-W j,k,h,l      move cursor to window down,up,right,left
+CTRL-W CRTL-W jkhl  move cursor to window down,up,right,left
 e!					reload the current file
 1G or gg			beginning of the file 
 G					goes to the en of file 
@@ -137,34 +137,34 @@ CRL-b				backward of the file
 		LINE MOVEMENT {motion}
         =====================
 w					forward a word
-W					Move to the next blank delimited word
+W					move to the next blank delimited word
 b					back a word
-B					Move to the beginning of blank delimited word
-e					Move to the end of the word
-E					Move to the end  of Blank delimited word
-(					Move a sentence back
-)					Move a sentence forward
-{					Move a paragraph back
-}					Move a paragraph forward
-^					To the first non-blank char of the line
+B					move to the beginning of blank delimited word
+e					move to the end of the word
+E					move to the end  of Blank delimited word
+(					move a sentence back
+)					move a sentence forward
+{					move a paragraph back
+}					move a paragraph forward
+^					to the first non-blank char of the line
 $ 					last char of the line 
 0					first char  of the line
 g0					first char in screen line
--"minus"			To the first char (*) lines higher
-+"plus"				To the first char (*) lines lower
+-"minus"			to the first char (*) lines higher
++"plus"				to the first char (*) lines lower
 gm					middle of k screen lined
 O					open a new line above curser
 o					"	"	"       below    "
 >>					indent
-.					Repeats the last action
+.					repeats the last action
 
 
 		EDITING
 		=======
 a					append a word
 A					append a the end of the line 
-I					Insert at the beginning of the line
-i					Insert text before the cursor [count] times
+I					insert at the beginning of the line
+i					insert text before the cursor [count] times
 u 					undo
 x                   delete to the right of cursor 
 X					"	    "   "    left    "     "
