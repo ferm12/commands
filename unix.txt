@@ -39,5 +39,12 @@ grep -rn "text" dir/path
 redirect output to file.txt
 grep -r "text" dir/path > file.txt 2>&1
 
-find all files that start with 'a'
+list files that start with 'a'
 ls | grep '^a'
+
+list files alphabetically 
+ls | sort
+
+list files alphabetically in reverse
+ls | sort -r
+

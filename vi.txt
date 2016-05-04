@@ -119,29 +119,29 @@ i					insert mode
 
 		WINDOW MOVEMENT
 		===============
-CRL-u				move up a page
-CRL-d				move down a page
-Shift-uparrow 		up a page
-Shift-downarrow		down a page
+CRL-u				move up
+CRL-d				move down
+Shift-uparrow 		page up
+Shift-downarrow		page down
 CTRL-W CRTL-W jkhl  move cursor to window down,up,right,left
+CRL-f				forward of the file
+CRL-b				backward of the file
 e!					reload the current file
 1G or gg			beginning of the file 
 G					goes to the en of file 
 H					higher part of the screen
 M					Middle part of the screen
 L					Lower pard of the screen
-CRL-f				forward of the file
-CRL-b				backward of the file
 %					Move to associated (), {}, []
 
 		LINE MOVEMENT {motion}
         =====================
-w					forward a word
-W					move to the next blank delimited word
 b					back a word
 B					move to the beginning of blank delimited word
 e					move to the end of the word
 E					move to the end  of Blank delimited word
+w					forward a word
+W					move to the next blank delimited word
 (					move a sentence back
 )					move a sentence forward
 {					move a paragraph back
@@ -163,14 +163,17 @@ o					"	"	"       below    "
 		=======
 a					append a word
 A					append a the end of the line 
-I					insert at the beginning of the line
-i					insert text before the cursor [count] times
-u 					undo
-x                   delete to the right of cursor 
-X					"	    "   "    left    "     "
+cw					change word
 d{motion}			delete text that is that is moved over with {motion}
 dw                  delete word					 
 d$                  deletes the rest of the word (same as cut & paste)
+I					insert at the beginning of the line
+i					insert text before the cursor [count] times
+p					paste
+r					replace single letter		
+u 					undo
+x                   delete to the right of cursor 
+X					"	    "   "    left    "     "
 xp					delete and paste
 y{motion}			yank text moved over with {motion}
 {visual}y			yank highlighted text
@@ -179,9 +182,6 @@ ytchar				yank until char(not including charecter)
 yw					yank word
 y$					yank until end of line	
 yb					yank from cursor to begin of current word
-p					paste
-cw					change word
-r					replace single letter		
 :/word or :?word	search word (* next occurrence, # previous occurrence  ) n up, N down
 <Leader><Leader>f   move forward in the document to specified char
 <Leader><Leader>F   move backward
@@ -227,9 +227,6 @@ SEARCH AND REPLACE
 :%s/foo/bar/gcI		Change each 'foo' (case sensitive) to 'bar'; ask for confirmation.
 
 The g flag means global – each occurrence in the line is changed, rather than just the first. 
-VISUAL MODE
-select lines 10-12
-10GV12G
 
 /usr/local/bin/ffmpeg -i '.$video_dir.$video_title.'.mp4 -ss '.$cuepoint_seconds.' -f image2 -vframes 1 -s 440x247 '.$video_dir.$video_title.'_frame_'.$cuepoint_formatted.'.png';
 
