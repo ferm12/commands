@@ -199,6 +199,17 @@ Fword 				move backward
 :1m 8               move line 1 after 8
 :1,5m 8				move lines 1-5 after line 8
 
+        commanT
+        =======
+<Leader>t or        brings CommandT to search files on current dir
+:CommandT
+:CommandT ../path/  brings CommandT, to search on the specified path 
+CTRL-s              open file on new split window
+CTRL-v              open file on vertical split window
+up down arrow       select up and down files on the current listings
+
+
+
 visual mode
 ==========
 

@@ -42,6 +42,9 @@ grep -r "text" dir/path > file.txt 2>&1
 list files that start with 'a'
 ls | grep '^a'
 
+list files that end with '.gif'
+ls | grep '.gif$'
+
 list files alphabetically 
 ls | sort
 
