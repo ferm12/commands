@@ -1,0 +1,2 @@
+OOP desing parents 
+Singleton: Ensure that only one instance of the classs is been instanciated

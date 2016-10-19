@@ -1,14 +1,7 @@
-function Baa()
-{
-    this.colors = ["red", "blue", "green"];
-}
+function Baa() { this.colors = ["red", "blue", "green"]; }
 
-// Foo inherits Baa
-function Foo()
-{
-    //Baa is been call in the context of this(Foo)
-    Baa.call(this);
-}
+// Foo (child) inherits Baa (parent). Baa is been call in the context of this (Foo).
+function Foo(){ Baa.call(this); }
 
 var instance11 = new Foo();
 instance11.colors.push("black");
@@ -17,9 +10,10 @@ alert(instance11.colors)            // "red,blue,green,black"
 var instance22 = new Foo();
 alert(instance22.colors);           // "red,blue,green"
 
+// Foo inherits Baa
 inheritance stack
 =================
-    Foo
-     |
-     V
-    Baa
+     Baa 
+      |
+      V
+     Foo 
