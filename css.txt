@@ -1,11 +1,11 @@
 min-width: 960
 |<--------dynamic-width---------->|
 |<----min-width------>|
-if ( "dinamic-width" >= min-width ) { do this }
+if ( "dinamic-width" >= min-width ) { code }
 
 max-width: 960
 |<---dynamic-width--->|      
 |<--------max-width-------------->|
-if ( "dynamic widht" <= max-width ) { do this }
+if ( "dynamic widht" <= max-width ) { code }
 
 

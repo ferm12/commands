@@ -25,7 +25,7 @@ Mediator:                   how and which objects interact with each other
 Memento:                    what private information is stored outside an object, and when
 Observer:                   number of objects that depend on another object; how the dependent objects stay up to date
 State:                      states of an object
-Strategy:                   an algorithm
+Strategy:                   encapsulating an algorithm into an object
 Template Method:            steps of an algorithm
 Visitor:                    operations that can be applied to object(s) without changing their class(es)
 

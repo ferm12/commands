@@ -1,3 +1,5 @@
+Javascript Inheritance 
+======================
 function Baa() { this.colors = ["red", "blue", "green"]; }
 
 // Foo (child) inherits Baa (parent). Baa is been call in the context of this (Foo).
@@ -10,10 +12,14 @@ alert(instance11.colors)            // "red,blue,green,black"
 var instance22 = new Foo();
 alert(instance22.colors);           // "red,blue,green"
 
-// Foo inherits Baa
-inheritance stack
-=================
+// Inheritance stack, Foo inherits Baa.
      Baa 
       |
       V
      Foo 
+
+Post- and Pre- increment 
+========================
+++j increments the value, then returns it.
+
+i++ returns the value, then increments it

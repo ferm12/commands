@@ -216,11 +216,6 @@ visual mode
 10GV2j             select starting at 10 going 2 lines down
 10GV12G            select lines 10-12
 
-++j increments the value, then returns it.
-
-i++ returns the value, then increments it
-
-
 see the difference btw two files. 
 open one file and then the other with..
 :diffsplit  dif1/dif2/filename 
