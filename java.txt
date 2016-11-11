@@ -1,0 +1,17 @@
+Parent
+  |
+  V
+Child
+
+? extends P
+C is subclass of P
+any type that is subclass of P
+
+Parent 
+  |
+  V
+child
+? super C
+P is superclass of C
+any class that is supperclass of C
+

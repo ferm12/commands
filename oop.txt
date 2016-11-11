@@ -1,13 +1,16 @@
-OOP desing parents 
+OOD 
 
 CREATIONAL
+----------
 Abstract Factory:           families of product objects
 Builder:                    how a composite object gets created
 Factory Method:             subclass of object that is instantiated
 Prototype:                  class of object that is instantiated
 Singleton:                  the sole instance of a class. Ensure that only one instance of class in been instanciated 
 
+
 STRUCTURAL
+----------
 Adapter:                    interface to an object
 Bridge:                     implementation of an object
 Composite:                  structure and composition of an object
@@ -16,7 +19,9 @@ Facade:                     interface to a subsystem
 Flyweight:                  storage costs of objects
 Proxy:                      how an object is accessed; its location
 
+
 BEHAVIORAL
+----------
 Chain of Responsibility:    object that can fulfill a request
 Command:                    when and how a request is fulfilled
 Interpreter:                grammar and interpretation of a language
@@ -28,4 +33,3 @@ State:                      states of an object
 Strategy:                   encapsulating an algorithm into an object
 Template Method:            steps of an algorithm
 Visitor:                    operations that can be applied to object(s) without changing their class(es)
-
