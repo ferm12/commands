@@ -1,0 +1,7 @@
+Key	Action
+Cmd+D
+Select next occurrence (add to selection)
+Cmd+K → Cmd+D
+Skip current occurrence, move to next
+Cmd+U
+Undo last selection (step back one)
