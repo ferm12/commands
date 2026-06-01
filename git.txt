@@ -1,0 +1,75 @@
+origin/main:  A → B → C
+your branch:  A → B → C → D → E  (2 local commits ahead, plus dirty files)
+
+Command	Result
+git reset --hard HEAD
+stays at E, clears dirty files
+
+git reset --hard origin/main
+moves back to C, loses D and E entirely
+
+Setup
+  git config --global user.name "Your Name"
+  git config --global user.email "you@example.com"
+  Starting work
+  git clone <url>                                   # clone a repo
+  git init                                          # init a new repo
+  git checkout -b feature/name                      # create and switch to a new branch
+  git switch main                                   # switch to an existing branch
+
+Daily workflow
+  git status                                        # see what changed
+  git diff                                          # see unstaged changes
+  git diff --staged                                 # see staged changes
+  git add .                                         # stage all changes
+  git add <file>                                    # stage a specific file
+  git commit -m "message"                           # commit staged changes
+  git push origin <branch>                          # push to remote
+  git pull                                          # fetch + merge latest from remote
+
+moves back to C, loses D and E entirely
+  git restore <file>                                # discard unstaged changes to a file
+  git restore --staged <file>                       # unstage a file (keep changes)
+  git reset --hard HEAD                             # discard ALL uncommitted changes
+  git reset --soft HEAD~1                           # undo last commit, keep changes staged
+
+  origin/main:  A → B → C
+  your branch:  A → B → C → D → E  plus dirty files
+  
+  git reset --hard HEAD
+  stays at E, clears dirty files
+
+  git reset --hard origin/main
+  moves back to C, loses D and E entirely
+  
+  git revert <commit>                               # create a new commit that undoes a commit (safe)
+
+Inspecting history
+  git log --oneline                                 # compact commit history
+  git log --oneline --graph                         # with branch graph
+  git show <commit>                                 # details of a specific commit
+  git blame <file>                                  # who changed each line
+
+Branches
+  git branch                                        # list local branches
+  git branch -a                                     # list all branches (local + remote)
+  git branch -d <branch>                            # delete a merged branch
+  git merge <branch>                                # merge branch into current
+  git rebase main                                   # rebase current branch onto main
+
+Remote
+  git fetch origin                                  # download changes without merging
+  git pull --rebase                                 # pull and rebase instead of merge
+  git push --force-with-lease                       # force push safely (feature branches only)
+  git remote -v                                     # list remotes
+
+Stash
+  git stash push -m "message"                       # stash with a label
+  git stash push -u -m "message"                    # include untracked files
+  git stash list                                    # see all stashes
+  git stash pop                                     # apply latest stash and remove it
+  git stash apply stash@{1}                         # apply a specific stash, keep it
+
+Cleanup
+  git clean -nd                                     # dry run — preview untracked files to delete
+  git clean -fd                                     # delete untracked files and directories
