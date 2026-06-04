@@ -1,4 +1,4 @@
 commands
 ========
 
-unix, vi, and other commands
+unix, vi, js and other commands
