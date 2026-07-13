@@ -1,0 +1,17 @@
+python3 --version
+Python 3.11.9
+
+Create a virtual environment
+python3 -m venv venv
+
+Activate the virtual environment
+source venv/bin/activate
+
+Upgrade pip
+python -m pip install --upgrade pip
+
+Install Gradio
+pip install gradio
+
+Verify
+python -c "import gradio; print(gradio.__version__)"
