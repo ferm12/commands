@@ -1,13 +1,3 @@
-origin/main:  A → B → C
-your branch:  A → B → C → D → E  (2 local commits ahead, plus dirty files)
-
-Command	Result
-git reset --hard HEAD
-stays at E, clears dirty files
-
-git reset --hard origin/main
-moves back to C, loses D and E entirely
-
 Setup
   git config --global user.name "Your Name"
   git config --global user.email "you@example.com"
@@ -26,6 +16,11 @@ Daily workflow
   git commit -m "message"                           # commit staged changes
   git push origin <branch>                          # push to remote
   git pull                                          # fetch + merge latest from remote
+# 2. Fetch and merge origin/main into your current branch
+  git fetch origin
+  git merge origin/main
+one-liner (fetch + merge combined):
+  git pull origin main
 
 moves back to C, loses D and E entirely
   git restore <file>                                # discard unstaged changes to a file
