@@ -49,8 +49,8 @@ Branches
   git branch                                        # list local branches
   git branch -a                                     # list all branches (local + remote)
   git branch -d <branch>                            # delete a merged branch
-  git merge <branch>                                # merge branch into current
-  git rebase main                                   # rebase current branch onto main
+  git merge <branch>                                # merge branch into current         // combines commits and createa a merge commit on top of main preserving history 
+  git rebase main                                   # rebase current branch onto main   // rebase moves commits on top of main, but in doing so git creates new comits instead of using the original one, thus writting history
 
 Remote
   git fetch origin                                  # download changes without merging
