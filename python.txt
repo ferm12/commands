@@ -2,10 +2,10 @@ python3 --version
 Python 3.11.9
 
 Create a virtual environment
-python3 -m venv venv
+python3 -m venv .venv
 
 Activate the virtual environment
-source venv/bin/activate
+source .venv/bin/activate
 
 Upgrade pip
 python -m pip install --upgrade pip
@@ -15,3 +15,15 @@ pip install gradio
 
 Verify
 python -c "import gradio; print(gradio.__version__)"
+
+
+
+======================================================
+
+Create a virtual environment
+python3 -m venv .venv
+
+Activate the virtual environment
+source .venv/bin/activate
+
+pip install flask 		

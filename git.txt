@@ -49,7 +49,9 @@ Branches
   git branch                                        # list local branches
   git branch -a                                     # list all branches (local + remote)
   git branch -d <branch>                            # delete a merged branch
-  git merge <branch>                                # merge branch into current         // combines commits and createa a merge commit on top of main preserving history 
+  git branch -m <branch>                            # rename branch 
+  git branch -m <old-branch> <new-branch>           # from a different branch
+  git merge <branch>                                # merge branch into current         // combines all the commits into a merge commit puts it on top of main, thus preserving history 
   git rebase main                                   # rebase current branch onto main   // rebase moves commits on top of main, but in doing so git creates new comits instead of using the original one, thus writting history
 
 Remote
@@ -68,3 +70,7 @@ Stash
 Cleanup
   git clean -nd                                     # dry run — preview untracked files to delete
   git clean -fd                                     # delete untracked files and directories
+
+Amend
+  git commit --amend -m "msg"                       # amend the last msg
+  git push --force-with-lease                       # for msgs already pushed amend then force-push-lease:
