@@ -16,10 +16,13 @@ Daily workflow
   git commit -m "message"                           # commit staged changes
   git push origin <branch>                          # push to remote
   git pull                                          # fetch + merge latest from remote
-# 2. Fetch and merge origin/main into your current branch
+
+  # 2. Fetch and merge origin/main into your current branch
   git fetch origin
   git merge origin/main
-one-liner (fetch + merge combined):
+  git fetch origin && git merge origin/main
+  
+  one-liner (fetch + merge of main combined):
   git pull origin main
 
 moves back to C, loses D and E entirely
