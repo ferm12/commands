@@ -8,7 +8,7 @@ cp -R dir1 dir2	        copy recursively from  dir1 to dir2
 mv
 ==
 mv old new              renames old to new
-mv -i old new           to be prompted before overwriting, overwrite (y/n)? 
+mv -i old new           to be prompted before overwriting, overwrite (y/n)?
 mv old new              renames old to new moves file into dir
 
 find 

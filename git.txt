@@ -1,13 +1,3 @@
-origin/main:  A → B → C
-your branch:  A → B → C → D → E  (2 local commits ahead, plus dirty files)
-
-Command	Result
-git reset --hard HEAD
-stays at E, clears dirty files
-
-git reset --hard origin/main
-moves back to C, loses D and E entirely
-
 Setup
   git config --global user.name "Your Name"
   git config --global user.email "you@example.com"
@@ -26,6 +16,14 @@ Daily workflow
   git commit -m "message"                           # commit staged changes
   git push origin <branch>                          # push to remote
   git pull                                          # fetch + merge latest from remote
+
+  # 2. Fetch and merge origin/main into your current branch
+  git fetch origin
+  git merge origin/main
+  git fetch origin && git merge origin/main
+  
+  one-liner (fetch + merge of main combined):
+  git pull origin main
 
 moves back to C, loses D and E entirely
   git restore <file>                                # discard unstaged changes to a file
@@ -54,8 +52,10 @@ Branches
   git branch                                        # list local branches
   git branch -a                                     # list all branches (local + remote)
   git branch -d <branch>                            # delete a merged branch
-  git merge <branch>                                # merge branch into current
-  git rebase main                                   # rebase current branch onto main
+  git branch -m <branch>                            # rename branch 
+  git branch -m <old-branch> <new-branch>           # from a different branch
+  git merge <branch>                                # merge branch into current         // combines all the commits into a merge commit puts it on top of main, thus preserving history 
+  git rebase main                                   # rebase current branch onto main   // rebase moves commits on top of main, but in doing so git creates new comits instead of using the original one, thus writting history
 
 Remote
   git fetch origin                                  # download changes without merging
@@ -73,3 +73,7 @@ Stash
 Cleanup
   git clean -nd                                     # dry run — preview untracked files to delete
   git clean -fd                                     # delete untracked files and directories
+
+Amend
+  git commit --amend -m "msg"                       # amend the last msg
+  git push --force-with-lease                       # for msgs already pushed amend then force-push-lease:
