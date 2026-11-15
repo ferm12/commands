@@ -51,3 +51,34 @@ ls | sort
 list files alphabetically in reverse
 ls | sort -r
 
+.zprofile – Login shell configuration
+.zprofile runs when you start a login shell.
+Setting environment variables.
+Configuring your PATH.
+Initializing tools that should be available throughout your login session.
+Loading system-level environment configurations.
+# Configure PATH
+export PATH="/opt/homebrew/bin:$PATH"
+# Node.js environment
+export NODE_ENV=development
+# Java environment
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+.zshrc – Interactive shell configuration
+.zshrc runs whenever you start an interactive Zsh shell.
+Aliases.
+Shell functions.
+Git shortcuts.
+Command-line tools.
+Terminal appearance and customization.
+Auto-completion.
+# Git aliases
+alias gs="git status"
+alias gc="git commit"
+alias gp="git push"
+# Navigation aliases
+alias ll="ls -lah"
+alias ..="cd .."
+# Enable command completion
+autoload -Uz compinit
+compinit
